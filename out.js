@@ -18,7 +18,7 @@ function makeSphere2() {
     const geometry = new THREE.SphereGeometry(0.5, 30, 30);
     geometry.scale(-1, 1, 1);
     // 画像を読み込む
-    const texture = new THREE.TextureLoader().load('./assets/imgs/pixage_panorama02.jpg');
+    const texture = new THREE.TextureLoader().load('./assets/imgs/U.jpg');
     // マテリアルにテクスチャーを設定
     const material = new THREE.MeshStandardMaterial({ map: texture, color: 0xffffff });
     // メッシュを作成
@@ -30,7 +30,7 @@ function makeSphere3() {
     const geometry = new THREE.SphereGeometry(0.5, 30, 30);
     geometry.scale(-1, 1, 1);
     // 画像を読み込む
-    const texture = new THREE.TextureLoader().load('./assets/imgs/pixage_panorama02.jpg');
+    const texture = new THREE.TextureLoader().load('./assets/imgs/P.jpg');
     // マテリアルにテクスチャーを設定
     const material = new THREE.MeshStandardMaterial({ map: texture, color: 0xffffff });
     // メッシュを作成
@@ -86,11 +86,11 @@ document.addEventListener('DOMContentLoaded', () => {
         sphere2.position.set(0.5, -0.8, 0.5);
         sphere2.userData.clickable = true;
 
-        const sphere3 = await makeSphere2();
+        const sphere3 = await makeSphere3();
         const light3 = new THREE.AmbientLight(0xFFFFFF, 1.0);
         scene.add(light3);
         sphere3.scale.set(0.3, 0.3, 0.3);
-        sphere3.position.set(0.5, 1.0, 0.5);
+        sphere3.position.set(0.4, 1.0, 0.5);
         sphere3.userData.clickable = true;
 
 
