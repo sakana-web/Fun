@@ -45,7 +45,7 @@ function jumpgoogle2() {
     location.href = "https://rin-sanity.github.io/africafe22-vr//sp/index.html";
 }
 function jumpgoogle3() {
-    location.href = "https://rin-sanity.github.io/africafe22-vr//sp/index.html";
+    location.href = "https://sakana-web.github.io/360ga/";
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // const group = new THREE.Group();
 
-        const house = await loadGLTF('./assets/models/musicband-raccoon/house.gltf');
+        const house = await loadGLTF('./assets/models/musicband-raccoon/27goukan.gltf');
         house.scene.scale.set(0.05, 0.05, 0.05);
         house.scene.position.set(-0.5, 0, 0);
         house.scene.rotation.set(180, 0, 0);
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const light3 = new THREE.AmbientLight(0xFFFFFF, 1.0);
         scene.add(light3);
         sphere3.scale.set(0.3, 0.3, 0.3);
-        sphere3.position.set(0.5, -0.8, 0.5);
+        sphere3.position.set(0.5, 1.0, 0.5);
         sphere3.userData.clickable = true;
 
 
