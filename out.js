@@ -54,10 +54,10 @@ function jumpgoogle() {
     location.href = "./assets/imgs/P.html";
 }
 function jumpgoogle2() {
-    location.href = "https://rin-sanity.github.io/africafe22-vr//sp/index.html";
+    location.href = "hsakana-web.github.io_Fun_.html";
 }
 function jumpgoogle3() {
-    location.href = "https://sakana-web.github.io/360ga/";
+    location.href = "./assets/imgs/P2.html";
 }
 function jumpgoogle4() {
     location.href = "./assets/imgs/P2.html";
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const start = async () => {
         const mindarThree = new window.MINDAR.IMAGE.MindARThree({
             container: document.body,
-            imageTargetSrc: './assets/targets/scenery.mind',
+            imageTargetSrc: './assets/targets/27gou.mind',
         });
         const { renderer, scene, camera } = mindarThree;
         const anchor = mindarThree.addAnchor(0);
@@ -77,50 +77,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const house = await loadGLTF('./assets/models/musicband-raccoon/27goukan.gltf');
         house.scene.scale.set(0.05, 0.05, 0.05);
-        house.scene.position.set(-0.5, 0, 0);
         house.scene.rotation.set(290, 30, 0);
-
-        const houseAncor = mindarThree.addAnchor(0);
-        houseAncor.group.add(house.scene);
-
-
-
+        house.scene.position.set(-0.5, 0, 0);
+        // house.scene.rotation.set(90, 0, 0);
+        // house.scene.position.set(0, 0, 0);
 
         // const raccoon = await loadGLTF('./assets/models/musicband-raccoon/house.gltf');
+        //
         const sphere = await makeSphere();
-        const light = new THREE.AmbientLight(0xFFFFFF, 1.0);
-        scene.add(light);
         sphere.scale.set(0.3, 0.3, 0.3);
-        sphere.position.set(0.3, 0.1, 0.2);
+        sphere.position.set(0.3, 0.15, 0.4);
         sphere.userData.clickable = true;
 
+        //LED
         const sphere2 = await makeSphere2();
-        const light2 = new THREE.AmbientLight(0xFFFFFF, 1.0);
-        scene.add(light2);
         sphere2.scale.set(0.3, 0.3, 0.3);
-        sphere2.position.set(0.3, 1.0, -0.8);
+        sphere2.position.set(0.3, 1.0, -0.2);
         sphere2.userData.clickable = true;
 
+        //AR
         const sphere3 = await makeSphere3();
-        const light3 = new THREE.AmbientLight(0xFFFFFF, 1.0);
-        scene.add(light3);
         sphere3.scale.set(0.3, 0.3, 0.3);
         sphere3.position.set(-0.6, -0.3, 0.8);
         sphere3.userData.clickable = true;
 
+        //ryo
         const sphere4 = await makeSphere4();
-        const light4 = new THREE.AmbientLight(0xFFFFFF, 1.0);
-        scene.add(light4);
         sphere4.scale.set(0.3, 0.3, 0.3);
         sphere4.position.set(-0.9, 0.6, 0.2);
         sphere4.userData.clickable = true;
 
 
         // scene.add(group);
+        const light = new THREE.AmbientLight(0xFFFFFF, 1.0);
+        scene.add(light);
+        anchor.group.add(house.scene);
+        anchor.group.add(sphere, sphere2, sphere3, sphere4);
 
-
-        anchor.group.add(sphere,sphere2,sphere3,sphere4);
-        // anchor.group.add(sphere2);
+        var axes = new THREE.AxisHelper(25);
+        anchor.group.add(axes);
 
 
 
