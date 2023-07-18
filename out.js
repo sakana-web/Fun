@@ -88,18 +88,21 @@ document.addEventListener('DOMContentLoaded', () => {
         sphere.scale.set(0.3, 0.3, 0.3);
         sphere.position.set(0.3, 0.15, 0.4);
         sphere.userData.clickable = true;
+        sphere.userData.name = "first";
 
         //LED
         const sphere2 = await makeSphere2();
         sphere2.scale.set(0.3, 0.3, 0.3);
         sphere2.position.set(0.3, 1.0, -0.2);
         sphere2.userData.clickable = true;
+        sphere2.userData.name = "LED";
 
         //AR
         const sphere3 = await makeSphere3();
         sphere3.scale.set(0.3, 0.3, 0.3);
         sphere3.position.set(-0.6, -0.3, 0.8);
         sphere3.userData.clickable = true;
+        sphere3.userData.name = "AR";
 
         // //ryo
         // const sphere4 = await makeSphere4();
@@ -115,10 +118,9 @@ document.addEventListener('DOMContentLoaded', () => {
         anchor.group.add(sphere, sphere2, sphere3);
         // sphere4
 
-        var axes = new THREE.AxisHelper(25);
-        anchor.group.add(axes);
-
-
+        // var axes = new THREE.AxisHelper(25);
+        // axes.userData.ignoreClickable = true;
+        // anchor.group.add(axes);
 
         const listener = new THREE.AudioListener();
         camera.add(listener);
@@ -135,27 +137,25 @@ document.addEventListener('DOMContentLoaded', () => {
             const raycaster = new THREE.Raycaster();
             raycaster.setFromCamera(mouse, camera);
 
-            const intersects = raycaster.intersectObjects(scene.children, true);
+            const intersects = raycaster.intersectObjects(anchor.group.children, true);
 
-            if (intersects.length > 0) {
-                let o = intersects[0].object;
+            if (intersects.length <= 0) {
+                return;
+            }
 
-                // while (o.parent && !o.userData.clickable) {
-                //     o = o.parent;
-                // }
+            let o = intersects[0].object;
+            // while (o.parent && !o.userData.clickable) {
+            //     o = o.parent;
+            // }
 
-                console.log(o.userData);
-                if (o.userData.clickable) {
-                    if (o === sphere) {
-                        jumpgoogle();
-                    }else if(o === sphere2){
-                        jumpgoogle2();
-                    }else if(o === sphere3){
-                        jumpgoogle3();
-                    }
-                    // else if(o === sphere4){
-                    //     jumpgoogle4();
-                    // }
+            console.log(o.userData);
+            if (o.userData.clickable) {
+                if (o === sphere) {
+                    jumpgoogle();
+                } else if(o === sphere2){
+                    jumpgoogle2();
+                } else if(o === sphere3){
+                    jumpgoogle3();
                 }
             }
         });
