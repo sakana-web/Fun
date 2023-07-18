@@ -6,7 +6,7 @@ function makeSphere() {
     const geometry = new THREE.SphereGeometry(0.5, 30, 30);
     geometry.scale(-1, 1, 1);
     // 画像を読み込む
-    const texture = new THREE.TextureLoader().load('./assets/imgs/pixage_panorama02.jpg');
+    const texture = new THREE.TextureLoader().load('./assets/imgs/PM.jpg');
     // マテリアルにテクスチャーを設定
     const material = new THREE.MeshStandardMaterial({ map: texture, color: 0xffffff });
     // メッシュを作成
@@ -18,7 +18,7 @@ function makeSphere2() {
     const geometry = new THREE.SphereGeometry(0.5, 30, 30);
     geometry.scale(-1, 1, 1);
     // 画像を読み込む
-    const texture = new THREE.TextureLoader().load('./assets/imgs/U.jpg');
+    const texture = new THREE.TextureLoader().load('./assets/imgs/LED.jpg');
     // マテリアルにテクスチャーを設定
     const material = new THREE.MeshStandardMaterial({ map: texture, color: 0xffffff });
     // メッシュを作成
@@ -30,7 +30,7 @@ function makeSphere3() {
     const geometry = new THREE.SphereGeometry(0.5, 30, 30);
     geometry.scale(-1, 1, 1);
     // 画像を読み込む
-    const texture = new THREE.TextureLoader().load('./assets/imgs/P.jpg');
+    const texture = new THREE.TextureLoader().load('./assets/imgs/AR.jpg');
     // マテリアルにテクスチャーを設定
     const material = new THREE.MeshStandardMaterial({ map: texture, color: 0xffffff });
     // メッシュを作成
@@ -51,13 +51,13 @@ function makeSphere3() {
 // }
 
 function jumpgoogle() {
-    location.href = "./assets/imgs/P3.html";
+    location.href = "./assets/imgs/PM.html";
 }
 function jumpgoogle2() {
-    location.href = "./assets/imgs/P.html";
+    location.href = "./assets/imgs/LED.html";
 }
 function jumpgoogle3() {
-    location.href = "./assets/imgs/P2.html";
+    location.href = "./assets/imgs/AR.html";
 }
 // function jumpgoogle4() {
 //     location.href = "https://sakana-web.github.io/360ga/";
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //LED
         const sphere2 = await makeSphere2();
         sphere2.scale.set(0.3, 0.3, 0.3);
-        sphere2.position.set(0.3, 1.0, -0.2);
+        sphere2.position.set(-0.1, 1.2, -0.5);
         sphere2.userData.clickable = true;
         sphere2.userData.name = "LED";
 
