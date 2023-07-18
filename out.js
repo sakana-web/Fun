@@ -75,7 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // const group = new THREE.Group();
 
-        const house = await loadGLTF('./assets/models/musicband-raccoon/tenji.gltf');
+        const house = await loadGLTF('./assets/models/musicband-raccoon/tenjia.gltf');
+        console.log(house);
         house.scene.scale.set(0.05, 0.05, 0.05);
         house.scene.rotation.set(290, 30, 0);
         house.scene.position.set(-0.5, 0, 0);
