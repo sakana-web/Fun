@@ -37,31 +37,31 @@ function makeSphere3() {
     const mesh = new THREE.Mesh(geometry, material);
     return mesh;
 }
-function makeSphere4() {
-    // 球体を作成
-    const geometry = new THREE.SphereGeometry(0.5, 30, 30);
-    geometry.scale(-1, 1, 1);
-    // 画像を読み込む
-    const texture = new THREE.TextureLoader().load('./assets/imgs/P.jpg');
-    // マテリアルにテクスチャーを設定
-    const material = new THREE.MeshStandardMaterial({ map: texture, color: 0xffffff });
-    // メッシュを作成
-    const mesh = new THREE.Mesh(geometry, material);
-    return mesh;
-}
+// function makeSphere4() {
+//     // 球体を作成
+//     const geometry = new THREE.SphereGeometry(0.5, 30, 30);
+//     geometry.scale(-1, 1, 1);
+//     // 画像を読み込む
+//     const texture = new THREE.TextureLoader().load('./assets/imgs/G2.jpg');
+//     // マテリアルにテクスチャーを設定
+//     const material = new THREE.MeshStandardMaterial({ map: texture, color: 0xffffff });
+//     // メッシュを作成
+//     const mesh = new THREE.Mesh(geometry, material);
+//     return mesh;
+// }
 
 function jumpgoogle() {
-    location.href = "./assets/imgs/P.html";
+    location.href = "./assets/imgs/P3.html";
 }
 function jumpgoogle2() {
-    location.href = "hsakana-web.github.io_Fun_.html";
+    location.href = "./assets/imgs/P.html";
 }
 function jumpgoogle3() {
     location.href = "./assets/imgs/P2.html";
 }
-function jumpgoogle4() {
-    location.href = "./assets/imgs/P2.html";
-}
+// function jumpgoogle4() {
+//     location.href = "https://sakana-web.github.io/360ga/";
+// }
 
 document.addEventListener('DOMContentLoaded', () => {
     const start = async () => {
@@ -101,18 +101,19 @@ document.addEventListener('DOMContentLoaded', () => {
         sphere3.position.set(-0.6, -0.3, 0.8);
         sphere3.userData.clickable = true;
 
-        //ryo
-        const sphere4 = await makeSphere4();
-        sphere4.scale.set(0.3, 0.3, 0.3);
-        sphere4.position.set(-0.9, 0.6, 0.2);
-        sphere4.userData.clickable = true;
+        // //ryo
+        // const sphere4 = await makeSphere4();
+        // sphere4.scale.set(0.3, 0.3, 0.3);
+        // sphere4.position.set(-0.9, 0.6, 0.2);
+        // sphere4.userData.clickable = true;
 
 
         // scene.add(group);
         const light = new THREE.AmbientLight(0xFFFFFF, 1.0);
         scene.add(light);
         anchor.group.add(house.scene);
-        anchor.group.add(sphere, sphere2, sphere3, sphere4);
+        anchor.group.add(sphere, sphere2, sphere3);
+        // sphere4
 
         var axes = new THREE.AxisHelper(25);
         anchor.group.add(axes);
@@ -151,9 +152,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         jumpgoogle2();
                     }else if(o === sphere3){
                         jumpgoogle3();
-                    }else if(o === sphere4){
-                        jumpgoogle4();
                     }
+                    // else if(o === sphere4){
+                    //     jumpgoogle4();
+                    // }
                 }
             }
         });
