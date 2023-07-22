@@ -6,7 +6,7 @@ function makeSphere() {
     const geometry = new THREE.SphereGeometry(0.5, 30, 30);
     geometry.scale(-1, 1, 1);
     // 画像を読み込む
-    const texture = new THREE.TextureLoader().load('./assets/imgs/PM.jpg');
+    const texture = new THREE.TextureLoader().load('./assets/imgs/PM2.jpg');
     // マテリアルにテクスチャーを設定
     const material = new THREE.MeshStandardMaterial({ map: texture, color: 0xffffff });
     // メッシュを作成
@@ -18,7 +18,7 @@ function makeSphere2() {
     const geometry = new THREE.SphereGeometry(0.5, 30, 30);
     geometry.scale(-1, 1, 1);
     // 画像を読み込む
-    const texture = new THREE.TextureLoader().load('./assets/imgs/LED.jpg');
+    const texture = new THREE.TextureLoader().load('./assets/imgs/LED2.jpg');
     // マテリアルにテクスチャーを設定
     const material = new THREE.MeshStandardMaterial({ map: texture, color: 0xffffff });
     // メッシュを作成
@@ -30,7 +30,7 @@ function makeSphere3() {
     const geometry = new THREE.SphereGeometry(0.5, 30, 30);
     geometry.scale(-1, 1, 1);
     // 画像を読み込む
-    const texture = new THREE.TextureLoader().load('./assets/imgs/AR.jpg');
+    const texture = new THREE.TextureLoader().load('./assets/imgs/AR2.jpg');
     // マテリアルにテクスチャーを設定
     const material = new THREE.MeshStandardMaterial({ map: texture, color: 0xffffff });
     // メッシュを作成
